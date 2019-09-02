@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Examples</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<body>
+  <div class="owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+var data = [
+  {
+    image: "",
+    title: "1",
+  },
+  {
+    image: "",
+    title: "2",
+  },
+  {
+    image: "",
+    title: "3",
+  },
+  {
+    image: "",
+    title: "4",
+  },
+  {
+    image: "",
+    title: "5",
+  }
+];
+
+var dom = document.querySelector('.owl-stage');
+
+function initUI (dom, data) {
+  var vdom = document.createDocumentFragment('div');
+  for (var i = 0; i < data.length; i++) {
+    var vdomChild = document.createElement('div')
+    vdomChild.classList.add('owl-item');
+    vdomChild.innerHTML = data[i].title;
+    vdom.appendChild(vdomChild);
+  };
+  dom.appendChild(vdom);
+}
+
+initUI(dom, data)
+
+var owl = $('.owl-carousel');
+
+owl.owlCarousel({
+    items:3.5,
+    loop:true,
+    margin:6,
+    autoplay: true,
+    autoplayTimeout: 1500,
+    autoplaySpeed: 1500,
+    slideTransition: 'cubic-bezier(0.5, 0.5, 0.5, 0.5)',
+    autoplayHoverPause:false,
+    nav: false,
+    dots: false
+});
+</script>
+</html>
